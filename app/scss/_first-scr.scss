@@ -1,0 +1,246 @@
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	margin: 18px -15px;
+	position: relative;
+}
+.logo{
+	display: block;
+	width: 280px;
+	margin: 0 15px;	
+	text-align: left; 
+	&-descr{
+		font-size: 12px;
+	}
+}
+.burger{
+	width: 44px;
+	height: 44px;
+	margin: 0 10px;
+	text-align: center;
+	line-height: 44px;  
+	font-size: 36px;   
+	display: none; 
+	background-color: #eee;
+	border-radius: 5px;
+	&:hover{
+		background-color: #d7d7d7;
+	}
+}   
+.nav{
+	width: calc(100% - 300px); 
+	margin: 0 15px;	 
+	padding-left: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	&-top{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&-calc{
+			font-size: 14px;
+			padding: 8px 20px;
+			border: 2px solid $active;
+			border-radius: 20px;
+			color: #555;
+			transition: .2s ease;
+			&:hover{
+				border-color: $hover;
+				color: #000;
+			}
+		}
+		&-phone{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 18px;
+			& span{
+				font-weight: 900;
+			}
+		}
+	}
+	&-nav{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		&-item{
+			color: #555;
+			transition: .2s ease;
+			&:hover{
+				color: #000;
+			}
+		}
+	}
+}
+.phone-number{
+	padding: 0 30px;
+}
+.order-call{
+	font-size: 14px;
+	color: #fff;
+	background-color: $active;
+	border: 2px solid $active;
+	padding: 8px 20px;
+	border-radius: 20px;
+	transition: .2s ease;
+	&:hover{
+		border-color: $hover;
+		background-color: $hover;
+	}
+}
+ 
+.first-screen{
+	padding-top: 118px;
+}
+
+// Slick-слайдер
+.slick-slide{
+	margin: 0px;
+}
+.slick-dots {
+	bottom: 25px;
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+.slick-dots li button:before {
+	content: "⚫";
+	color: #fff;
+	border-radius: 50%;
+	border: 1px solid transparent;
+	font-family: $default-font;
+	font-size: 17px;
+	line-height: 17px;
+  width: 16px;
+  height: 16px;	
+  opacity: 1;
+  transition: .2s ease;
+}
+.slick-dots li button:hover:before{
+	color: $hover;
+}
+.slick-dots li.slick-active button:before {
+	border-color: $hover;
+	color: $hover;
+  opacity: 1;
+}
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 0 10px;
+ }
+
+// 
+.slide{
+	background: #fff url(../img/bg-first.jpg) center 0%/ cover;
+	height: calc(100vh - 118px);
+	color: #fff;
+	&-wrapper{
+		display: flex;
+		padding: 0 60px 50px;
+		height: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&-content{
+		width: 600px;
+		text-align: left;
+		//border: 1px solid #fff;
+	}
+	&-title{
+		font-size: 64px;
+		font-weight: 700;
+		line-height: 1; 
+		margin-bottom: 1.5rem;
+	}
+	&-list-pr{
+		list-style: none;
+	}
+	&-item-pr{
+		font-size: 23px;
+		font-weight: 300;
+		padding-bottom: 5px;
+		&:before{
+			content: "⚫";
+			color: $active;
+			font-size: 8px;
+			line-height: 8px;
+			vertical-align: middle;
+			padding-right: 5px;
+		}
+	}
+	&-form{
+		background-color: #fff;
+		width: 340px;
+		border-radius: 5px;
+		text-align: center;
+		padding: 30px 20px;
+		color: #000000;
+		position: relative;
+		&:before{
+			content: '';
+			display: block;
+			position: absolute;
+			background: url(../img/right-arrow.png) 0 0 no-repeat;
+			bottom: 25px;
+			left: -70px;
+			width: 107px;
+			height: 38px;
+		}
+		&-title{
+			font-size: 30px;
+			font-weight: 700;
+		}
+		&-subtitle{
+			font-size: 18px;
+			font-weight: 400;
+			margin-bottom: 15px;
+		}
+		& input{
+			font-size: 16px;
+			padding: 10px 20px;
+			margin: 10px auto;
+			width: 100%;
+			color: #959595;
+			border: #e6e6e6 1px solid;
+			border-radius: 5px;
+			outline: none;
+			&:focus:required:invalid {
+				border-color: red;
+			}
+			&:required:valid {
+				border-color: green;
+			}
+		}
+		&-button{
+			margin: 10px auto;
+		}
+	}
+}
+.success {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-weight: 700;
+  z-index: 1010;
+}
+.success span {
+  margin: auto;
+  line-height: 2;
+  font-size: 18px;
+}
+.success~* {
+  transition: all .5s ease;
+}
+.success.active~* {
+  opacity: .5;
+  filter: blur(10px);
+}

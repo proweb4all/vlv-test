@@ -1,0 +1,78 @@
+@import "../libs/slick/slick.scss";
+@import "../libs/slick/slick-theme.scss"; 
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700&subset=cyrillic');
+
+$default-font: 'Fira Sans', sans-serif;
+$text: #111111;
+$active: #ffb119;
+$hover: #ff8b19;
+
+*{	
+	box-sizing: border-box !important;
+	outline: none;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	position: relative;
+	min-width: 320px;
+	overflow-x: hidden;
+	background-color: #ffffff;
+	font-family: $default-font;
+	color: $text;
+	font-weight: 400;
+	line-height: normal;
+}
+img {
+	max-width: 100%; 
+	height: auto;
+}
+b, strong {
+	font-weight: bold;
+}
+a{
+	text-decoration: none;
+	color: $text;
+}
+section{
+}
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+	height: 100%;
+	text-align: center;
+	position: relative;
+}
+.fix{
+	position: fixed;
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	box-shadow:         0px 3px 6px 0px rgba(150, 150, 150, 0.25);
+	z-index: 1002;
+}
+.button{
+	color: #fff;
+	background-color: $active;
+	border: 2px solid $active;
+	width: 200px;
+	font-size: 16px;
+	padding: 8px;
+	border-radius: 20px;
+	transition: .2s ease;
+	cursor: pointer;
+	&:hover{
+		border-color: $hover;
+		background-color: $hover;
+	}
+}
+
+@import "first-scr";
+@import "second-scr";
+@import "media";

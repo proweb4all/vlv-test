@@ -1,0 +1,174 @@
+.second-screen{
+  padding: 80px 0; 
+}
+.triggers{
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  //margin: 50px; 
+  list-style: none; 
+  //height: 84px;
+  &-card{
+    font-size: 14px;
+    text-align: center;
+    width: calc(20% - 50px);
+    margin: 10px 25px;
+    &-descr{
+      padding: 15px 0;
+    }
+  }
+  &-button{
+    margin: 20px 0;
+  }
+}
+.calc-title{
+  font-size: 36px;
+  font-weight: 700;
+  margin: 80px 0 50px; 
+}
+.calc-progress{
+  font-size: 22px;
+  font-weight: 400;
+}
+  
+// Прогресс-бар
+@for $i from 0 through 100 {
+  .progress progress[value="#{$i}"]  {
+    & ~ .progress-bg .progress-bar { width: $i * 1% }
+  }
+}
+.progress{
+  position: relative; 
+  overflow: hidden;
+  progress  {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: -777px;
+  }
+}
+.progress-bg{
+  position: relative;
+  height: 16px;
+  margin: 15px auto;
+  width: 50%;  
+  border-radius: 8px;
+  border: 2px solid $active;
+  overflow: hidden;
+}
+.progress-bar{
+  overflow: hidden;
+  background: $active;
+  border-radius: 8px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  -webkit-transition: width 1s linear;
+  -moz-transition: width 1s linear;
+  -ms-transition: width 1s linear;
+  transition: width 1s linear;    
+}
+
+// Типы кухонь
+.types{
+  width: 1000px;
+  margin: 40px auto;
+  border: 12px solid $active;
+  padding: 60px;
+  text-align: left;
+  &:before{
+    content: '';
+    display: block;
+    background: url(../img/woodshavings-1.png) 0 0 no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: -60px;
+    width: 159px;
+    height: 223px;
+  }
+  &:after{
+    content: '';
+    display: block;
+    background: url(../img/woodshavings-2.png) 0 0 no-repeat;
+    position: absolute;
+    bottom: 500px; 
+    right: -40px;  
+    width: 196px;
+    height: 184px;
+  }
+  &-title{
+    font-size: 24px;
+    font-weight: normal;
+    & span{
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      background-color: $active;
+      border-radius: 50%;
+      margin-right: 10px; 
+    }
+  }
+  &-block{
+    display: flex;
+    margin: 20px -20px;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+  }
+  &-item{
+    width: 250px;
+    margin: 20px;
+    text-align: left;
+    & label{
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      padding-left: 40px;
+      font-size: 12px;
+      line-height: 24px; 
+      &:before {
+        content: "⚫";
+        color: transparent;
+        font-size: 24px;  
+        text-align: center; 
+        line-height: 24px; 
+        display: inline-block;
+        width: 23px;
+        height: 23px;
+        position: absolute;
+        left: 0; 
+        top: 0; 
+        border: 2px solid #e0e0e0;
+        border-radius: 50%; 
+        transition: .1s ease;
+      } 
+      &:hover:before{
+        color: $active; 
+      }
+    }
+    input[type="radio"]:checked + label:before{
+      color: $active;
+      border-color: $active;
+    }
+    input[type="radio"]:checked + label>img{
+      filter: none;
+      opacity: 1;
+    }
+  }
+  &-img{
+    filter: grayscale(100%);
+    filter: gray; /* IE 6-9 */  
+    opacity: .5;
+    padding-top: 3px;
+  } 
+  &-button{
+    display: block; 
+    width: 230px;
+    margin: 10px auto;
+  }
+}
